@@ -18,6 +18,8 @@ class VehReadWrite {
 
     async reading(data) {
         const time = new Date().getTime();
+        console.log('FUNC:reading in:veh-read-and-write');
+        console.log('data', data);
         if(time > this.lastReading + 60 * 1000) { //rate limit to 60 secs
           let reading = this.convertData(data);
           this.uploader.update(this.opts.deviceID, reading);
