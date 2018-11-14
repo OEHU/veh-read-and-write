@@ -24,7 +24,7 @@ class VehReadWrite {
           let reading = this.convertData(data);
           this.uploader.update(this.opts.deviceID, reading);
           this.lastReading = time;
-          console.clear();
+          //console.clear();
           //global.gc();
           console.log(reading);
         }
@@ -37,12 +37,12 @@ class VehReadWrite {
     convertData(data) {
       const reading = {
         lastUpdate: Date.now(),
-        electricityReceived : {
+        electricityReceived: {
             total: data.electricity.received.tariff1.reading + data.electricity.received.tariff2.reading,
             tarrif1: data.electricity.received.tariff1.reading,
             tariff2: data.electricity.received.tariff2.reading
         },
-        electricityDelivered : {
+        electricityDelivered: {
             total: data.electricity.delivered.tariff1.reading + data.electricity.delivered.tariff2.reading,
             tarrif1: data.electricity.delivered.tariff1.reading,
             tariff2: data.electricity.delivered.tariff2.reading
