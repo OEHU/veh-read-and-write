@@ -18,7 +18,7 @@ class VehReadWrite {
 
     async reading(data) {
         const time = new Date().getTime();
-        if(time > this.lastReading + 10 * 1000) { //rate limit to 10 secs
+        if(time > this.lastReading + 60 * 1000) { //rate limit to 60 secs
           let reading = this.convertData(data);
           this.uploader.update(this.opts.deviceID, reading);
           this.lastReading = time;
