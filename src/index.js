@@ -14,6 +14,7 @@ class VehReadWrite {
     start() {
         this.reader.on('reading', this.reading);
         this.reader.on('error', this.error);
+        this.reader.on('connected', this.connected);
     }
 
     async reading(data) {
@@ -32,6 +33,12 @@ class VehReadWrite {
 
     error(err) {
         console.log("error", err);
+    }
+
+    connected(portConfig) {
+      console.log('Connection with the Smart Meter has been established on port: ' + portConfig.port
+        + ' (BaudRate: ' + portConfig.baudRate + ', Parity: ' + portConfig.parity + ', Databits: '
+        + portConfig.dataBits + 'Stopbits: ' + portConfig.stopBits + ')');
     }
 
     convertData(data) {
@@ -54,5 +61,10 @@ class VehReadWrite {
     }
 
 }
+
+// Handle all uncaught errors without crashing
+process.on('uncaughtException', error => {
+    console.error(error);
+});
 
 export default VehReadWrite;
