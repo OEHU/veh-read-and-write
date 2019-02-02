@@ -27,6 +27,6 @@
   "dependencies": {
     "bigchaindb-orm": "^3.0.1",
     "p1-reader": "https://github.com/OEHU/node-p1-reader.git",
-    "veh-bigchaindb-uploader": "https://github.com/MickdeGraaf/veh-bigchaindb-uploader.git"
+    "veh-bigchaindb-uploader": "https://github.com/OEHU/veh-bigchaindb-uploader.git"
   }
 }
