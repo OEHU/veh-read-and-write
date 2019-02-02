@@ -1,6 +1,6 @@
 {
   "name": "veh-read-and-write",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Reads P1 data and writes it to bigchainDB",
   "main": "./dist/index.js",
   "scripts": {
