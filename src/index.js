@@ -12,8 +12,8 @@ class VehReadWrite {
     }
 
     start() {
-        // this.reader.on('reading', this.reading);
-        // this.reader.on('error', this.error);
+        this.reader.on('reading', this.reading);
+        this.reader.on('error', this.error);
         this.reader.on('connected', this.connected);
     }
 
